@@ -1,49 +1,84 @@
-<div class="flex justify-center">
-
-    <div [formGroup]="otp" class="flex flex-wrap flex-row justify-around divide-x-6 otp-cover">
-        <!-- <div class="w-1/6 "> -->
-            <input id="one" class="boxes" type="text" maxlength="1" 
-            (paste)="onPaste($event)"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="one"/>
-        <!-- </div> -->
-        <!-- <div class="w-1/6  "> -->
-            <input id="two" class="boxes" type="text" maxlength="1"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="two"/>
-        <!-- </div> -->
-        <!-- <div class="w-1/6 "> -->
-            <input id="three" class="boxes" type="text" maxlength="1"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="three"/>
-        <!-- </div> -->
-        <!-- <div class="w-1/6 "> -->
-            <input #four class="boxes" type="text" maxlength="1"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="four"/>
-        <!-- </div> -->
-        <!-- <div class="w-1/6 "> -->
-            <input #five class="boxes" type="text" maxlength="1"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="five"/>
-        <!-- </div> -->
-        <!-- <div class="w-1/6 "> -->
-            <input id="six" class="boxes" type="text" maxlength="1"
-            (keyup)="input($event)"
-            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-            formControlName="six"/>
-        <!-- </div> -->
-        
+<div class="container h-screen w-screen flex flex-col justify-center px-16 background-grad">
+  <div class="sec-container card">
+    <div>
+      <h3>Enter your OTP</h3>
     </div>
+    <div
+      [formGroup]="otp"
+      class="flex flex-wrap flex-row justify-around divide-x-6 otp-cover"
+    >
+      <!-- <div class="w-1/6 "> -->
+      <input
+        id="one"
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (paste)="onPaste($event)"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="one"
+      />
+      <!-- </div> -->
+      <!-- <div class="w-1/6  "> -->
+      <input
+        id="two"
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="two"
+      />
+      <!-- </div> -->
+      <!-- <div class="w-1/6 "> -->
+      <input
+        id="three"
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="three"
+      />
+      <!-- </div> -->
+      <!-- <div class="w-1/6 "> -->
+      <input
+        #four
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="four"
+      />
+      <!-- </div> -->
+      <!-- <div class="w-1/6 "> -->
+      <input
+        #five
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="five"
+      />
+      <!-- </div> -->
+      <!-- <div class="w-1/6 "> -->
+      <input
+        id="six"
+        class="boxes"
+        type="text"
+        maxlength="1"
+        (keyup)="input($event)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        formControlName="six"
+      />
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <br />
+  <div class="otp-box">
+    <button class="submit" (click)="goToHomePage()">Submit</button>
+  </div>
 </div>
-
-<div>
-
-    <button class="" (click)="goToHomePage()" style="background-color:green ;" >Submit</button>
-</div>
-
