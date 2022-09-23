@@ -8,19 +8,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  otp: FormGroup;
+  // otp: FormGroup;
   otpValue: any = [];
   key = '1,2,3,4,5,6';
+  checkKey: any;
+  otp = new FormGroup({
+    one: new FormControl('', Validators.required),
+    two: new FormControl('', Validators.required),
+    three: new FormControl('', Validators.required),
+    four: new FormControl('', Validators.required),
+    five: new FormControl('', Validators.required),
+    six: new FormControl('', Validators.required),
+  });
 
   constructor(private route: Router) {
-    this.otp = new FormGroup({
-      one: new FormControl('', Validators.required),
-      two: new FormControl('', Validators.required),
-      three: new FormControl('', Validators.required),
-      four: new FormControl('', Validators.required),
-      five: new FormControl('', Validators.required),
-      six: new FormControl('', Validators.required),
-    });
+    // this.otp = new FormGroup({
+    //   one: new FormControl('', Validators.required),
+    //   two: new FormControl('', Validators.required),
+    //   three: new FormControl('', Validators.required),
+    //   four: new FormControl('', Validators.required),
+    //   five: new FormControl('', Validators.required),
+    //   six: new FormControl('', Validators.required),
+    // });
   }
 
   ngOnInit(): void {
@@ -51,30 +60,36 @@ export class LoginComponent implements OnInit {
 
   input(event: any) {
     let element;
-    let skipCount = 0;
-    console.log(this.otp.value);
+    let active=document.activeElement?.id
+    event.srcElement.selectionStart=event.srcElement.selectionStart=event.srcElement.value.length
 
     if (event.code !== 'Backspace') {
       console.log(event);
 
       if (
-        (event.keyCode >= 48 && event.keyCode <= 57) ||
-        (event.keyCode >= 96 && event.keyCode <= 105)
+        ((event.keyCode >= 48 && event.keyCode <= 57) ||
+        (event.keyCode >= 96 && event.keyCode <= 105)) && this.checkKey==event.key
       ) {
         element = event.srcElement.nextElementSibling;
       }
     }
 
     if (event.code === 'Backspace') {
+      
       element = event.srcElement.previousElementSibling;
+      console.log(event.srcElement.value);
       element.value = null;
-      console.log(event.srcElement.previousElementSibling.value);
     }
     if (element == null) {
       return;
     } else {
       element.focus();
     }
+  }
+  check(event:any){
+    console.log(event.key);
+    
+    this.checkKey=event.key
   }
 
   onPaste(e: any) {

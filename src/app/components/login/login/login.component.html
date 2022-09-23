@@ -1,11 +1,11 @@
-<div class="container h-screen w-screen flex flex-col justify-center px-16 background-grad">
+<div class="container h-screen w-screen flex flex-col justify-center px-4 background-grad flex-wrap items-center">
   <div class="sec-container card">
     <div>
       <h3>Enter your OTP</h3>
     </div>
     <div
       [formGroup]="otp"
-      class="flex flex-wrap flex-row justify-around divide-x-6 otp-cover"
+      class="flex flex-wrap flex-row justify-around divide-x-6 otp-cover max-w-[530px]"
     >
       <!-- <div class="w-1/6 "> -->
       <input
@@ -15,6 +15,7 @@
         maxlength="1"
         (paste)="onPaste($event)"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="one"
       />
@@ -26,6 +27,7 @@
         type="text"
         maxlength="1"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="two"
       />
@@ -37,6 +39,7 @@
         type="text"
         maxlength="1"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="three"
       />
@@ -48,6 +51,7 @@
         type="text"
         maxlength="1"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="four"
       />
@@ -59,6 +63,7 @@
         type="text"
         maxlength="1"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="five"
       />
@@ -70,15 +75,14 @@
         type="text"
         maxlength="1"
         (keyup)="input($event)"
+        (keydown)="check($event)"
         onkeypress="return event.charCode >= 48 && event.charCode <= 57"
         formControlName="six"
       />
       <!-- </div> -->
     </div>
-  </div>
-
-  <br />
-  <div class="otp-box">
-    <button class="submit" (click)="goToHomePage()">Submit</button>
+    <div class="otp-box">
+        <button class="submit" (click)="goToHomePage()">Submit</button>
+      </div>
   </div>
 </div>

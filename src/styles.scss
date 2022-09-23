@@ -16,10 +16,11 @@
     background: white;
     border-radius: 10px;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: .7em;
     display: inline-flex;
     text-align: center;
     flex-direction: column;
+    align-content: center;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -31,7 +32,21 @@
     border-radius: 10px;
     text-align: center;
     padding: 0;
+    min-width: 1.4rem;
+    height: 50px;
+    transition: .5s;
   }
   input:focus {
-    border-width: 3px;
+    border-width: 5px;
+    transition: .5s;
+    border-color: rgb(3, 98, 110);
   }
+  input:active {
+    border-width: 5px;
+    transition: .5s;
+    border-color: rgb(3, 98, 110);
+  }
+  body {
+    background: rgb(131,127,196);
+background: linear-gradient(90deg, rgba(131,127,196,1) 0%, rgba(9,121,113,1) 35%, rgba(6,71,162,1) 55%, rgba(4,109,187,1) 67%, rgba(0,212,255,1) 100%);
+}

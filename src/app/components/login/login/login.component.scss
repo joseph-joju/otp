@@ -6,10 +6,9 @@
 }
 
 .boxes{
-    border-color: black;
+    // border-color: black;
     border-width: 1px;
     width: 10%;
-    padding-left: 15px;
 }
 
     
@@ -18,17 +17,23 @@
 .submit{
     background-color: blue;
     border-radius: 17px;
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     align-items: center;
     padding: 10px;
     min-width: 151px;
     font-weight: bold;
+    transition: .5s;
 }
 
 .submit:hover {
     background-color: rgba(0, 0, 255, 0.411);
+    transition: .5s;
+}
 
+.card {
+    padding: 1em;
+    max-width: 500px;
 }
 
 .otp-box{
@@ -43,7 +48,3 @@
     // justify-content: center;
 }
 
-.background-grad {
-    background: rgb(131,127,196);
-background: linear-gradient(90deg, rgba(131,127,196,1) 0%, rgba(9,121,113,1) 35%, rgba(6,71,162,1) 55%, rgba(4,109,187,1) 67%, rgba(0,212,255,1) 100%);
-}
